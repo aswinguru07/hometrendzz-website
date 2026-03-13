@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Portfolio | HomeTrendzz – Interior Design Projects Gallery</title>
+    <meta name="description"
+        content="Browse HomeTrendzz's portfolio of stunning interior design projects. See before & after transformations across living rooms, kitchens, bedrooms, and more." />
+    <meta name="keywords"
+        content="interior design portfolio, home interior projects, before after interior design, living room transformation, kitchen renovation" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .portfolio-full-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-full-grid .pf-large {
+            grid-column: span 2;
+        }
+
+        .pf-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .pf-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .pf-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .pf-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 20, 16, 0.85) 0%, transparent 55%);
+            opacity: 0;
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .pf-item:hover .pf-overlay {
+            opacity: 1;
+        }
+
+        .pf-overlay-content {
+            color: var(--white);
+        }
+
+        .pf-overlay-content h4 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .pf-overlay-content p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
+        }
+
+        .pf-overlay-content .pf-tag {
+            display: inline-block;
+            background: var(--primary);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .ba-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .ba-card img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .ba-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(26, 20, 16, 0.75);
+            color: var(--white);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            background: var(--dark-2);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .stat-block {
+            padding: 40px 24px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-block:last-child {
+            border-right: none;
+        }
+
+        .stat-block .num {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+
+        .stat-block .lbl {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 8px;
+        }
+
+        @media(max-width:1024px) {
+            .portfolio-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-full-grid .pf-large {
+                grid-column: span 1;
+            }
+        }
+
+        @media(max-width:768px) {
+            .portfolio-full-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-banner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:480px) {
+            .stats-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-block {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Home<span>Trendzz</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
+            <div class="burger" id="burger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Portfolio</div>
+            <h1>Our Design Portfolio</h1>
+            <p>500+ projects completed across India — each one a unique story of transformation, creativity, and
+                craftsmanship.</p>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <section class="section" style="padding:48px 0;">
+        <div class="container">
+            <div class="stats-banner reveal">
+                <div class="stat-block">
+                    <div class="num">500+</div>
+                    <div class="lbl">Projects Completed</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">15+</div>
+                    <div class="lbl">Cities Covered</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">98%</div>
+                    <div class="lbl">Client Satisfaction</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">20+</div>
+                    <div class="lbl">Design Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Our Work</div>
+                <h2>Featured Projects Gallery</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="filter-tabs reveal">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="living">Living Rooms</button>
+                <button class="filter-tab" data-filter="kitchen">Kitchens</button>
+                <button class="filter-tab" data-filter="bedroom">Bedrooms</button>
+                <button class="filter-tab" data-filter="wardrobe">Wardrobes</button>
+                <button class="filter-tab" data-filter="ceiling">Ceilings</button>
+            </div>
+            <div class="portfolio-full-grid">
+                <div class="pf-item pf-large" data-cat="living" style="aspect-ratio:16/9;" class="reveal">
+                    <img src="hero_living_room.png" alt="Sharma Luxury Living Room" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Living Room</span>
+                            <h4>vishal Luxury Residence</h4>
+                            <p>chennai,ambattur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="kitchen" style="aspect-ratio:4/5;" class="reveal">
+                    <img src="kitchen_design.png" alt="Modern Kitchen Design" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Kitchen</span>
+                            <h4>Harini Modern Kitchen</h4>
+                            <p>maduravoyal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="bedroom" style="aspect-ratio:4/3;" class="reveal">
+                    <img src="bedroom_design.png" alt="Master Bedroom" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Bedroom</span>
+                            <h4>prasanth Master Suite</h4>
+                            <p>chennai,thambaram</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="wardrobe" style="aspect-ratio:4/3;" class="reveal">
+                    <img src="wardrobe_design.png" alt="Walk-in Wardrobe" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Wardrobe</span>
+                            <h4>priya Walk-in Closet</h4>
+                            <p>chennai-tambaram</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item pf-large" data-cat="ceiling" style="aspect-ratio:16/9;" class="reveal">
+                    <img src="false_ceiling_design.png" alt="False Ceiling Design" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">False Ceiling</span>
+                            <h4>Verma Grand Ceiling</h4>
+                            <p>chennai-pudur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf4BHK · Bangalore · 2025-item" data-cat="lighting" style="aspect-ratio:4/5;"
+                    class="reveal">
+                    <img src="lighting_design.png" alt="Dining Lighting Design" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Lighting</span>
+                            <h4>Surya Dining Ambiance</h4>
+                            <p>Bungalow · Chennai · 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="living" style="aspect-ratio:4/3;" class="reveal">
+                    <img src="portfolio_before_after.png" alt="Home Transformation" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Full Home</span>
+                            <h4>arun Complete Renovation</h4>
+                            <p>thiruvallur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="bedroom" style="aspect-ratio:4/3;" class="reveal">
+                    <img src="wardrobe_design.png" alt="Kids Bedroom" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Bedroom</span>
+                            <h4>Joshi Kids Wonderland</h4>
+                            <p>chennai-thambaram</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-item" data-cat="kitchen" style="aspect-ratio:4/3;" class="reveal">
+                    <img src="lighting_design.png" alt="Luxury Dining" />
+                    <div class="pf-overlay">
+                        <div class="pf-overlay-content"><span class="pf-tag">Dining</span>
+                            <h4>nithya Luxury Dining Space</h4>
+                            <p>vandaloor-chennai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Transformations</div>
+                <h2>Before &amp; After</h2>
+                <div class="divider"></div>
+                <p>The power of expert interior design — see the dramatic difference we make.</p>
+            </div>
+            <div class="before-after">
+                <div class="ba-card reveal reveal-delay-1">
+                    <div class="ba-label">BEFORE</div>
+                    <img src="about_hero.png" alt="Before interior design transformation" />
+                </div>
+                <div class="ba-card reveal reveal-delay-2">
+                    <div class="ba-label" style="background:var(--primary);">AFTER</div>
+                    <img src="portfolio_before_after.png" alt="After interior design transformation" />
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:20px;color:var(--text-muted);font-size:0.9rem;font-style:italic;">
+                balaji Residence — Complete Living Room Transformation, chengalpattu 2025</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-banner reveal">
+                <h2>Love What You See? Let's Design Your Home Next.</h2>
+                <p>Get a free consultation and personalized design proposal within 48 hours.</p>
+                <div class="cta-btns">
+                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="pricing.html" class="btn btn-outline-white">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="logo">Home<span>Trendzz</span></a>
+                    <p>Transforming houses into dream homes with modern, stylish, and affordable interior design
+                        solutions since 2012.</p>
+                    <div class="footer-social"><a href="#" class="social-btn">📷</a><a href="#"
+                            class="social-btn">📘</a><a href="#" class="social-btn">▶️</a><a href="#"
+                            class="social-btn">📌</a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">→ Home</a></li>
+                        <li><a href="about.html">→ About Us</a></li>
+                        <li><a href="services.html">→ Services</a></li>
+                        <li><a href="portfolio.html">→ Portfolio</a></li>
+                        <li><a href="pricing.html">→ Pricing</a></li>
+                        <li><a href="contact.html">→ Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">→ Living Room Design</a></li>
+                        <li><a href="services.html">→ Modular Kitchen</a></li>
+                        <li><a href="services.html">→ Bedroom Design</a></li>
+                        <li><a href="services.html">→ Wardrobe Solutions</a></li>
+                        <li><a href="services.html">→ False Ceiling</a></li>
+                        <li><a href="services.html">→ Full Home Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <div class="icon">📍</div>
+                        <p>42, Design Boulevard, Sector 18, Noida, UP - 201301</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">📞</div>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">✉️</div>
+                        <p>hello@hometrendzz.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 HomeTrendzz. All rights reserved.</span><span>Design with ❤️ for
+                    beautiful homes</span></div>
+        </div>
+    </footer>
+    <a href="https://wa.me/919080995018?text=Hi%20HomeTrendzz!" id="whatsapp-btn" target="_blank"
+        aria-label="WhatsApp"><svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
+    <button id="scroll-top" aria-label="Scroll to top">↑</button>
+    <script src="main.js"></script>
+</body>
+
+</html>

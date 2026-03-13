@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Interior Design Services | HomeTrendzz – Living Room, Kitchen, Bedroom &amp; More</title>
+    <meta name="description"
+        content="Explore HomeTrendzz's complete interior design services: living room design, modular kitchen, bedroom interiors, wardrobe solutions, false ceiling, lighting design, and full home packages." />
+    <meta name="keywords"
+        content="living room interior design, modular kitchen design, bedroom interior design, wardrobe solutions, false ceiling design, lighting design, full home interior packages" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .service-detail-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sdc-img {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .sdc-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-detail-card:hover .sdc-img img {
+            transform: scale(1.05);
+        }
+
+        .sdc-body {
+            padding: 32px;
+        }
+
+        .sdc-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-alt));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sdc-body h2 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .sdc-body>p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .benefit-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .benefit-tag::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .process-section {
+            background: var(--dark-2);
+            color: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-gold));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            border: 4px solid var(--dark-2);
+        }
+
+        .process-step h4 {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media(max-width:1024px) {
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        .full-home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media(max-width:1024px) {
+            .full-home-grid { gap: 40px; }
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .process-steps::before { display: none; }
+        }
+
+        @media(max-width:768px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .full-home-grid { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        @media(max-width:480px) {
+            .process-steps { grid-template-columns: 1fr; }
+            .sdc-body { padding: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Home<span>Trendzz</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
+            <div class="burger" id="burger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Services</div>
+            <h1>Our Interior Design Services</h1>
+            <p>From single rooms to complete home transformations — we bring your vision to life with expertise,
+                creativity, and care.</p>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">What We Do</div>
+                <h2>Comprehensive Design Solutions</h2>
+                <div class="divider"></div>
+                <p>Every service is tailored to your space, taste, and budget — backed by 12 years of design expertise.
+                </p>
+            </div>
+            <div class="services-grid">
+
+                <!-- Living Room -->
+                <div class="service-detail-card reveal reveal-delay-1" id="living-room">
+                    <div class="sdc-img"><img src="hero_living_room.png"
+                            alt="Living Room Interior Design" /></div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">🛋️</div>
+                        <h2>Living Room Interior Design</h2>
+                        <p>Transform your living room into the heart of your home — a space that's both stunning to look
+                            at and deeply comfortable to live in. Our designers blend your preferred aesthetic with
+                            smart furniture planning and décor curation.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Custom furniture layouts</div>
+                            <div class="benefit-tag">Feature wall design</div>
+                            <div class="benefit-tag">TV unit & shelving</div>
+                            <div class="benefit-tag">Sofa & upholstery selection</div>
+                            <div class="benefit-tag">Rugs, curtains & décor</div>
+                            <div class="benefit-tag">Ambient lighting plan</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-living">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="service-detail-card reveal reveal-delay-2" id="kitchen">
+                    <div class="sdc-img"><img src="kitchen_design.png" alt="Modular Kitchen Design" />
+                    </div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">🍳</div>
+                        <h2>Modular Kitchen Design</h2>
+                        <p>A well-designed kitchen is the soul of a functional home. Our modular kitchen designs
+                            maximize storage, improve workflow, and create a space that's a joy to cook in — built with
+                            premium materials and precision craftsmanship.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Custom cabinet design</div>
+                            <div class="benefit-tag">Marble / quartz countertops</div>
+                            <div class="benefit-tag">Smart storage solutions</div>
+                            <div class="benefit-tag">Appliance integration</div>
+                            <div class="benefit-tag">Backsplash design</div>
+                            <div class="benefit-tag">Ergonomic workflow planning</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-kitchen">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Bedroom -->
+                <div class="service-detail-card reveal reveal-delay-1" id="bedroom">
+                    <div class="sdc-img"><img src="bedroom_design.png" alt="Bedroom Interior Design" />
+                    </div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">🛏️</div>
+                        <h2>Bedroom Interior Design</h2>
+                        <p>Your bedroom should be your personal sanctuary — a place to unwind, recharge, and dream. We
+                            create serene, beautifully composed bedrooms that balance aesthetic elegance with practical
+                            comfort.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Bed & headboard design</div>
+                            <div class="benefit-tag">Storage optimization</div>
+                            <div class="benefit-tag">Mood & ambient lighting</div>
+                            <div class="benefit-tag">Curtains & soft furnishings</div>
+                            <div class="benefit-tag">Kids' bedroom themes</div>
+                            <div class="benefit-tag">Master suite design</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-bedroom">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Wardrobe -->
+                <div class="service-detail-card reveal reveal-delay-2" id="wardrobe">
+                    <div class="sdc-img"><img src="wardrobe_design.png"
+                            alt="Wardrobe and Storage Design" /></div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">👗</div>
+                        <h2>Wardrobe &amp; Storage Solutions</h2>
+                        <p>Maximize every inch of space with custom-built wardrobes and storage systems that are both
+                            beautiful and highly functional. From sliding door wardrobes to luxury walk-in closets, we
+                            design for your lifestyle.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Sliding door wardrobes</div>
+                            <div class="benefit-tag">Walk-in closets</div>
+                            <div class="benefit-tag">Built-in LED lighting</div>
+                            <div class="benefit-tag">Custom shelf layouts</div>
+                            <div class="benefit-tag">Mirror & glass finishes</div>
+                            <div class="benefit-tag">Shoe racks & accessories</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-wardrobe">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- False Ceiling -->
+                <div class="service-detail-card reveal reveal-delay-1" id="false-ceiling">
+                    <div class="sdc-img"><img src="false_ceiling_design.png" alt="False Ceiling Design" />
+                    </div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">✨</div>
+                        <h2>False Ceiling Design</h2>
+                        <p>An elegant false ceiling is the crown of interior design — it adds architectural depth,
+                            defines spaces, and creates breathtaking lighting effects. Our designs range from minimalist
+                            cove ceilings to elaborate multi-level masterpieces.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Gypsum false ceilings</div>
+                            <div class="benefit-tag">Cove & cove LED designs</div>
+                            <div class="benefit-tag">POP decorative ceilings</div>
+                            <div class="benefit-tag">Wood panel accents</div>
+                            <div class="benefit-tag">Coffered ceiling designs</div>
+                            <div class="benefit-tag">Integrated light fixtures</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-ceiling">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Lighting -->
+                <div class="service-detail-card reveal reveal-delay-2" id="lighting">
+                    <div class="sdc-img"><img src="lighting_design.png" alt="Lighting Design" /></div>
+                    <div class="sdc-body">
+                        <div class="sdc-icon">💡</div>
+                        <h2>Lighting Design</h2>
+                        <p>Lighting is the invisible ingredient that makes a space truly magical. Our lighting
+                            specialists craft layered lighting plans that enhance your interiors' beauty, set the right
+                            mood, and improve everyday functionality.</p>
+                        <div class="benefits-grid">
+                            <div class="benefit-tag">Ambient & task lighting</div>
+                            <div class="benefit-tag">Smart home lighting</div>
+                            <div class="benefit-tag">Pendant & chandelier selection</div>
+                            <div class="benefit-tag">LED strip lighting</div>
+                            <div class="benefit-tag">Accent & feature lighting</div>
+                            <div class="benefit-tag">Energy-efficient solutions</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" id="consult-lighting">Book Consultation</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Home Package Banner -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="full-home-grid">
+                <div class="reveal">
+                    <div class="badge">Complete Solution</div>
+                    <h2
+                        style="font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--dark);margin-bottom:16px;">
+                        Full Home Interior Packages</h2>
+                    <p style="color:var(--text-muted);line-height:1.85;margin-bottom:16px;">Why stop at one room? Our
+                        complete home interior packages cover every space — from the entrance to the balcony — under one
+                        streamlined project with a single point of contact and significant cost savings.</p>
+                    <p style="color:var(--text-muted);line-height:1.85;margin-bottom:24px;">Available for apartments
+                        (1BHK to 5BHK), villas, and duplex homes. We handle design, material sourcing, civil work
+                        coordination, and final installation — start to finish.</p>
+                    <ul style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+                        <li style="display:flex;gap:10px;align-items:center;font-size:0.92rem;color:var(--text-muted);">
+                            <span style="color:var(--primary);font-weight:700;">✓</span> One design team, one project
+                            manager, zero confusion</li>
+                        <li style="display:flex;gap:10px;align-items:center;font-size:0.92rem;color:var(--text-muted);">
+                            <span style="color:var(--primary);font-weight:700;">✓</span> Consistent design language
+                            throughout your home</li>
+                        <li style="display:flex;gap:10px;align-items:center;font-size:0.92rem;color:var(--text-muted);">
+                            <span style="color:var(--primary);font-weight:700;">✓</span> Package pricing with up to 20%
+                            savings vs individual rooms</li>
+                        <li style="display:flex;gap:10px;align-items:center;font-size:0.92rem;color:var(--text-muted);">
+                            <span style="color:var(--primary);font-weight:700;">✓</span> Flexible payment schedules
+                            available</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Packages & Pricing</a>
+                </div>
+                <div class="reveal reveal-delay-2"
+                    style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+                    <img src="portfolio_before_after.png"
+                        alt="Before and after home interior transformation by HomeTrendzz"
+                        style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge badge-light">Our Process</div>
+                <h2>How We Work</h2>
+                <div class="divider"></div>
+                <p style="color:rgba(255,255,255,0.65);">A streamlined 5-step process to deliver your dream home on time
+                    and on budget.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="step-num">01</div>
+                    <h4>Consultation</h4>
+                    <p>Free discovery call to understand your vision, requirements, and budget.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="step-num">02</div>
+                    <h4>Design & 3D</h4>
+                    <p>Personalized design concepts and photorealistic 3D renders for your approval.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="step-num">03</div>
+                    <h4>Material Selection</h4>
+                    <p>Curated materials, finishes, and furniture choices within your budget.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="step-num">04</div>
+                    <h4>Execution</h4>
+                    <p>Expert craftspeople execute the design with regular progress updates.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="step-num">05</div>
+                    <h4>Handover</h4>
+                    <p>Final walkthrough, quality check, and keys to your dream home!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner reveal">
+                <h2>Ready to Transform Your Space?</h2>
+                <p>Book your free design consultation today and let's start creating your dream home.</p>
+                <div class="cta-btns">
+                    <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+                    <a href="pricing.html" class="btn btn-outline-white">View Pricing Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="logo">Home<span>Trendzz</span></a>
+                    <p>Transforming houses into dream homes with modern, stylish, and affordable interior design
+                        solutions since 2012.</p>
+                    <div class="footer-social"><a href="#" class="social-btn">📷</a><a href="#"
+                            class="social-btn">📘</a><a href="#" class="social-btn">▶️</a><a href="#"
+                            class="social-btn">📌</a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">→ Home</a></li>
+                        <li><a href="about.html">→ About Us</a></li>
+                        <li><a href="services.html">→ Services</a></li>
+                        <li><a href="portfolio.html">→ Portfolio</a></li>
+                        <li><a href="pricing.html">→ Pricing</a></li>
+                        <li><a href="contact.html">→ Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">→ Living Room Design</a></li>
+                        <li><a href="services.html">→ Modular Kitchen</a></li>
+                        <li><a href="services.html">→ Bedroom Design</a></li>
+                        <li><a href="services.html">→ Wardrobe Solutions</a></li>
+                        <li><a href="services.html">→ False Ceiling</a></li>
+                        <li><a href="services.html">→ Full Home Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <div class="icon">📍</div>
+                        <p>42, Design Boulevard, Sector 18, Noida, UP - 201301</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">📞</div>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">✉️</div>
+                        <p>hello@hometrendzz.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 HomeTrendzz. All rights reserved.</span><span>Design with ❤️ for
+                    beautiful homes</span></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919080995018?text=Hi%20HomeTrendzz!" id="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+    <button id="scroll-top" aria-label="Scroll to top">↑</button>
+    <script src="main.js"></script>
+</body>
+
+</html>

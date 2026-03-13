@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Contact Us | HomeTrendzz – Get a Free Interior Design Consultation</title>
+    <meta name="description"
+        content="Contact HomeTrendzz for a free home interior design consultation. Call, WhatsApp, or fill out our form and we'll get back to you within 24 hours." />
+    <meta name="keywords"
+        content="contact HomeTrendzz, interior design consultation, book interior designer, free design consultation India" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-form-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form-card h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-card>p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #075e54, #128c7e);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(7, 94, 84, 0.25);
+        }
+
+        .whatsapp-cta .wa-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-cta .wa-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--white);
+        }
+
+        .whatsapp-cta h4 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .whatsapp-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.82rem;
+        }
+
+        .quick-connect {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .qc-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 18px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1.5px solid var(--border);
+        }
+
+        .qc-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .qc-btn .qic {
+            font-size: 1.4rem;
+        }
+
+        .qc-btn h5 {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--dark);
+        }
+
+        .qc-btn p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .success-msg {
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+            padding: 20px 24px;
+            border-radius: var(--radius);
+            color: var(--white);
+            text-align: center;
+            display: none;
+            margin-top: 16px;
+            font-weight: 600;
+        }
+
+        @media(max-width:1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-connect {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Home<span>Trendzz</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary nav-cta">Free Consultation</a>
+            <div class="burger" id="burger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+            <h1>Get in Touch</h1>
+            <p>Book your free consultation today. Our design experts will respond within 24 hours — usually within 2
+                hours!</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- Contact Info Side -->
+                <div class="reveal">
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/919080995018?text=Hi%20HomeTrendzz!%20I%20would%20like%20to%20know%20more%20about%20your%20interior%20design%20services."
+                        class="whatsapp-cta" target="_blank" id="wa-main-cta">
+                        <div class="wa-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Chat on WhatsApp</h4>
+                            <p>Instant replies · Mon–Sat 9AM–9PM · +91 9080995018</p>
+                        </div>
+                    </a>
+
+                    <!-- Quick Contact Buttons -->
+                    <div class="quick-connect">
+                        <a href="tel:+919080995018" class="qc-btn" id="call-btn">
+                            <span class="qic">📞</span>
+                            <div>
+                                <h5>Call Us Now</h5>
+                                <p>+91 9080995018</p>
+                            </div>
+                        </a>
+                        <a href="mailto:hello@hometrendzz.in" class="qc-btn" id="email-btn">
+                            <span class="qic">✉️</span>
+                            <div>
+                                <h5>Send Email</h5>
+                                <p>hello@hometrendzz.in</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info Cards -->
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div>
+                            <h5>Visit Our Studio</h5>
+                            <p>42, vandaloor road,near thambaram,chennai</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div>
+                            <h5>Working Hours</h5>
+                            <p>Monday – Saturday: 9:00 AM – 7:00 PM<br />Sunday: By appointment only</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">⚡</div>
+                        <div>
+                            <h5>Response Time</h5>
+                            <p>We aim to respond to all inquiries within 2 hours during business hours. WhatsApp
+                                responses are typically within 30 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🌍</div>
+                        <div>
+                            <h5>We Serve</h5>
+                            <p>Delhi NCR · Mumbai · Bangalore · Hyderabad · Pune · Chennai · Jaipur · Noida · Gurugram &
+                                more cities across India.</p>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-wrapper" style="margin-top:8px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2!2d77.3!3d28.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSector%2018%2C%20Noida%2C%20UP!5e0!3m2!1sen!2sin!4v1234567890"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="HomeTrendzz Office Location - Sector 18, Noida">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card reveal reveal-delay-2">
+                    <div class="badge" style="margin-bottom:12px;">Free Consultation</div>
+                    <h2>Book Your Free Design Session</h2>
+                    <p>Fill in your details and our design consultant will reach out within 24 hours with a personalized
+                        proposal.</p>
+
+                    <form id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first_name" placeholder="Rahul" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last_name" placeholder="Sharma" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="rahul@example.com" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Your City *</label>
+                            <input type="text" id="city" name="city" placeholder="e.g. Delhi, Mumbai, Bangalore..."
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option>Living Room Interior Design</option>
+                                <option>Modular Kitchen Design</option>
+                                <option>Bedroom Interior Design</option>
+                                <option>Wardrobe & Storage Solutions</option>
+                                <option>False Ceiling Design</option>
+                                <option>Lighting Design</option>
+                                <option>Full Home Interior Package</option>
+                                <option>Other / Not Sure Yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Approximate Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range...</option>
+                                <option>₹2 – 5 Lakhs</option>
+                                <option>₹5 – 10 Lakhs</option>
+                                <option>₹10 – 20 Lakhs</option>
+                                <option>₹20 – 35 Lakhs</option>
+                                <option>₹35 Lakhs+</option>
+                                <option>Not decided yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project</label>
+                            <textarea id="message" name="message"
+                                placeholder="Describe your home, the rooms you want designed, your style preferences, expected timeline, or anything else you'd like us to know..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width:100%;justify-content:center;font-size:1rem;padding:18px;" id="submit-form">
+                            Send Message & Book Consultation →
+                        </button>
+                        <div class="success-msg" id="success-msg">✓ Message sent! We'll contact you within 24 hours.
+                        </div>
+                        <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:14px;">🔒 Your
+                            information is 100% secure and will never be shared.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Process -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">What's Next?</div>
+                <h2>After You Contact Us</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid-4">
+                <div class="why-item reveal reveal-delay-1" style="flex-direction:column;text-align:center;">
+                    <div class="why-icon" style="margin:0 auto 16px;">1️⃣</div>
+                    <div>
+                        <h4>We Respond Fast</h4>
+                        <p>Our team contacts you within 2 hours to schedule a free consultation call.</p>
+                    </div>
+                </div>
+                <div class="why-item reveal reveal-delay-2" style="flex-direction:column;text-align:center;">
+                    <div class="why-icon" style="margin:0 auto 16px;">2️⃣</div>
+                    <div>
+                        <h4>Design Discovery Call</h4>
+                        <p>A 30-min call to understand your vision, space, and requirements in detail.</p>
+                    </div>
+                </div>
+                <div class="why-item reveal reveal-delay-3" style="flex-direction:column;text-align:center;">
+                    <div class="why-icon" style="margin:0 auto 16px;">3️⃣</div>
+                    <div>
+                        <h4>Custom Proposal</h4>
+                        <p>Within 48 hours, you receive a detailed design proposal and transparent quote.</p>
+                    </div>
+                </div>
+                <div class="why-item reveal reveal-delay-4" style="flex-direction:column;text-align:center;">
+                    <div class="why-icon" style="margin:0 auto 16px;">4️⃣</div>
+                    <div>
+                        <h4>Project Begins!</h4>
+                        <p>Once approved, we kick off your dream home journey with dedicated support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="logo">Home<span>Trendzz</span></a>
+                    <p>Transforming houses into dream homes with modern, stylish, and affordable interior design
+                        solutions since 2012.</p>
+                    <div class="footer-social"><a href="#" class="social-btn">📷</a><a href="#"
+                            class="social-btn">📘</a><a href="#" class="social-btn">▶️</a><a href="#"
+                            class="social-btn">📌</a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">→ Home</a></li>
+                        <li><a href="about.html">→ About Us</a></li>
+                        <li><a href="services.html">→ Services</a></li>
+                        <li><a href="portfolio.html">→ Portfolio</a></li>
+                        <li><a href="pricing.html">→ Pricing</a></li>
+                        <li><a href="contact.html">→ Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">→ Living Room</a></li>
+                        <li><a href="services.html">→ Modular Kitchen</a></li>
+                        <li><a href="services.html">→ Bedroom Design</a></li>
+                        <li><a href="services.html">→ Wardrobe Solutions</a></li>
+                        <li><a href="services.html">→ False Ceiling</a></li>
+                        <li><a href="services.html">→ Full Home Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <div class="icon">📍</div>
+                        <p>42, vandaloor road,near thambaram,chennai</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">📞</div>
+                        <p>+91 9080995018</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="icon">✉️</div>
+                        <p>hello@hometrendzz.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 HomeTrendzz. All rights reserved.</span><span>Design with ❤️ for
+                    beautiful homes</span></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919080995018?text=Hi%20HomeTrendzz!%20I%20would%20like%20to%20get%20a%20free%20design%20consultation."
+        id="whatsapp-btn" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
+    <button id="scroll-top" aria-label="Scroll to top">↑</button>
+    <script src="main.js"></script>
+    <script>
+        // Show success message inline
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-form');
+            btn.textContent = 'Sending…'; btn.disabled = true;
+            setTimeout(() => {
+                btn.style.display = 'none';
+                document.getElementById('success-msg').style.display = 'block';
+                this.reset();
+            }, 1400);
+        });
+    </script>
+</body>
+
+</html>
